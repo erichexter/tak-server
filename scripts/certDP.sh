@@ -8,6 +8,7 @@ fi
 
 IP=$1
 USER=$2
+UID=$(uuidgen)
 
 # server.pref
 
@@ -33,7 +34,7 @@ echo "</preferences>" >> server.pref
 
 echo "<MissionPackageManifest version=\"2\">" > manifest.xml
 echo "  <Configuration>" >> manifest.xml
-echo "    <Parameter name=\"uid\" value=\"sponsored-by-cloudrf-the-api-for-rf\"/>" >> manifest.xml
+echo "    <Parameter name=\"uid\" value=\"$UID \"/>" >> manifest.xml
 echo "    <Parameter name=\"name\" value=\"$USER DP\"/>" >> manifest.xml
 echo "    <Parameter name=\"onReceiveDelete\" value=\"true\"/>" >> manifest.xml
 echo "  </Configuration>" >> manifest.xml
